@@ -62,9 +62,9 @@ Notes, labs, and hands-on exercises from my Linux Fundamentals learning journey 
 * [ ] Loops
 * [ ] Functions
 * [ ] Automation Scripts
-
----
 <!--
+---
+
 ## 🧪 Labs
 
 | Lab | Topic             | Status |
