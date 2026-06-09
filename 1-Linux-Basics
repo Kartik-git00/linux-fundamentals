@@ -1,0 +1,107 @@
+# Linux Fundamentals
+
+## What is Linux?
+
+Linux is a **free and open-source operating system (OS)** based on Unix.
+
+Unlike proprietary operating systems such as **Windows** and **macOS**, Linux gives users full control over the system and allows anyone to view, modify, and distribute its source code.
+
+
+## Key Features of Linux
+
+### 🔓 Fully Open-Source
+- Source code is publicly available.
+- Anyone can inspect, modify, and contribute to the project.
+
+### 💻 Multi-Platform
+- Runs on desktops, laptops, servers, smartphones, embedded devices, and supercomputers.
+
+### ⚙️ Highly Customizable & Lightweight
+- Users can customize nearly every aspect of the operating system.
+- Can run efficiently on both modern and older hardware.
+
+### 🛡️ Secure & Stable
+- Strong permission system and security model.
+- Widely used in servers due to its reliability and uptime.
+
+### 🤝 Community-Driven
+- Supported by a large global community of developers and contributors.
+- Extensive documentation and learning resources are available.
+
+### 🧠 Kernel-Based
+- The Linux Kernel is the core component that manages hardware and system resources.
+- Different Linux distributions use the same kernel with different tools and interfaces.
+
+
+# Why Learn Linux?
+
+### 🏢 Industry Standard
+- Dominates servers, cloud platforms, and enterprise infrastructure.
+
+### 🚀 Career Opportunities
+- Essential skill for Cybersecurity, DevOps, Cloud Computing, System Administration, and Software Development.
+
+### 🔒 Security & Stability
+- Trusted by organizations for critical systems and infrastructure.
+
+### 🎨 Customizable
+- Freedom to tailor the operating system to specific needs.
+
+### ⚡ Efficient
+- Performs well even on low-resource hardware.
+
+
+# Popular Linux Distributions
+
+## Debian-Based Distributions
+
+| Distribution | Description |
+|-------------|-------------|
+| Ubuntu | Beginner-friendly and widely used Linux distribution |
+| Kali Linux | Designed for penetration testing and security assessments |
+| Linux Mint | User-friendly distribution based on Ubuntu |
+| Parrot OS | Security-focused distribution for pentesting and development |
+| Kali Purple | Combines Red Team and Blue Team security tools |
+
+
+## Red Hat-Based Distributions
+
+| Distribution | Description |
+|-------------|-------------|
+| Red Hat Enterprise Linux (RHEL) | Enterprise-grade commercial Linux distribution |
+| Fedora Linux | Community-driven distribution sponsored by Red Hat |
+| Rocky Linux | Free RHEL-compatible enterprise distribution |
+| AlmaLinux | Community-supported RHEL replacement |
+| CentOS | Historically a free RHEL-based distribution |
+
+
+## Arch-Based Distributions
+
+| Distribution | Description |
+|-------------|-------------|
+| Arch Linux | Minimal, highly customizable Linux distribution |
+| Manjaro | User-friendly distribution based on Arch Linux |
+
+
+## SUSE-Based Distributions
+
+| Distribution | Description |
+|-------------|-------------|
+| openSUSE | Community-supported Linux distribution |
+| SUSE Linux Enterprise | Enterprise version of SUSE Linux |
+
+
+## Other Distributions
+
+| Distribution | Description |
+|-------------|-------------|
+| Gentoo | Source-based Linux distribution with maximum customization |
+| Slackware | One of the oldest Linux distributions, known for simplicity and stability |
+
+
+## Quick Summary
+
+- Linux is a **free and open-source operating system**.
+- The **Linux Kernel** is the core component of every Linux distribution.
+- Linux is widely used in **Cybersecurity, Cloud Computing, Servers, DevOps, and System Administration**.
+- Different distributions are designed for different purposes, but all use the Linux Kernel.
