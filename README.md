@@ -60,7 +60,6 @@ Notes, labs, and hands-on exercises from my Linux Fundamentals learning journey 
 * [ ] Variables
 * [ ] Loops
 * [ ] Functions
-* [ ] Automation Scripts
 
 ---
 
@@ -69,10 +68,14 @@ Notes, labs, and hands-on exercises from my Linux Fundamentals learning journey 
 ```text
 linux-fundamentals/
 │
+├── 1-Linux-Basics
+├── 2-Navigation-and-Files
+├── 3-Users-and- Permissions
+├── 4-System-Administration
+├── 5-Networking
+├── 6-Bash-Scripting
+├── 7-final-port-scanner-project
 ├── README.md
-├── notes
-├── labs
-├── screenshots
 ```
 
 ---
