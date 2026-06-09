@@ -97,6 +97,53 @@ Unlike proprietary operating systems such as **Windows** and **macOS**, Linux gi
 | Slackware | One of the oldest Linux distributions, known for simplicity and stability |
 
 
+# Linux Filesystem Hierarchy (FHS)
+
+Linux follows a tree-like structure where everything starts from the **root directory (`/`)**.
+
+| Path | Description |
+|------|-------------|
+| `/` | Root directory containing all files and folders |
+| `/bin` | Essential command binaries |
+| `/boot` | Bootloader and kernel files |
+| `/dev` | Device files for hardware |
+| `/etc` | System configuration files |
+| `/home` | Home directories for users |
+| `/lib` | Shared libraries required by programs |
+| `/media` | Mount point for removable devices (USB, CD, etc.) |
+| `/mnt` | Temporary mount point for filesystems |
+| `/opt` | Optional third-party software |
+| `/root` | Home directory of the root user |
+| `/sbin` | System administration binaries |
+| `/tmp` | Temporary files |
+| `/usr` | User applications, libraries, and documentation |
+| `/var` | Variable data such as logs and databases |
+
+## Commonly Used Directories
+
+- **`/home`** → User files and personal data
+- **`/etc`** → Configuration files
+- **`/var/log`** → System logs
+- **`/tmp`** → Temporary files
+- **`/dev`** → Hardware devices
+- **`/root`** → Root user's home directory
+
+### Quick Memory Trick
+
+| Directory | Meaning |
+|------------|----------|
+| `/bin` | Binaries |
+| `/boot` | Boot files |
+| `/dev` | Devices |
+| `/etc` | Configuration files |
+| `/home` | User files |
+| `/lib` | Libraries |
+| `/opt` | Optional software |
+| `/tmp` | Temporary files |
+| `/usr` | User programs |
+| `/var` | Variable data |
+
+
 ## Quick Summary
 
 - Linux is a **free and open-source operating system**.
