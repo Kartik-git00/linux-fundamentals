@@ -18,16 +18,15 @@ Notes, labs, and hands-on exercises from my Linux Fundamentals learning journey 
 
 ### Linux Basics
 
-* [ ] What is Linux?
-* [ ] Linux Distributions
-* [ ] Linux File System Structure
-* [ ] Terminal Basics
+* [x] What is Linux?
+* [x] Why learn Linux?
+* [x] Linux Distributions
 
 ### Navigation & Files
 
-* [ ] pwd
-* [ ] ls
-* [ ] cd
+* [x] pwd
+* [x] ls
+* [x] cd
 * [ ] mkdir
 * [ ] touch
 * [ ] cp
@@ -62,21 +61,6 @@ Notes, labs, and hands-on exercises from my Linux Fundamentals learning journey 
 * [ ] Loops
 * [ ] Functions
 * [ ] Automation Scripts
-<!--
----
-
-## 🧪 Labs
-
-| Lab | Topic             | Status |
-| --- | ----------------- | ------ |
-| 01  | Linux Navigation  | ⏳      |
-| 02  | File Management   | ⏳      |
-| 03  | Users & Groups    | ⏳      |
-| 04  | File Permissions  | ⏳      |
-| 05  | Processes         | ⏳      |
-| 06  | Networking Basics | ⏳      |
-| 07  | SSH               | ⏳      |
-| 08  | Bash Scripting    | ⏳      |
 
 ---
 
@@ -86,12 +70,11 @@ Notes, labs, and hands-on exercises from my Linux Fundamentals learning journey 
 linux-fundamentals/
 │
 ├── README.md
-├── notes/
-├── labs/
-├── screenshots/
-└── resources/
+├── notes
+├── labs
+├── screenshots
 ```
--->
+
 ---
 
 ## 📖 Learning Resources
