@@ -21,6 +21,7 @@ Notes, labs, and hands-on exercises from my Linux Fundamentals learning journey 
 * [x] What is Linux?
 * [x] Why learn Linux?
 * [x] Linux Distributions
+* [x] File System Hierarchy
 
 ### Navigation & Files
 
