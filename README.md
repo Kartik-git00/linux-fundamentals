@@ -62,18 +62,10 @@ Learning automation through Bash scripts, variables, loops, functions, and condi
 
 ```text
 linux-fundamentals/
-├── README.md
-└──Linux_Fundamentals.pdf
-  ├── 01-linux-navigation
-  ├── 02-file-management
-  ├── 03-users-and-groups
-  ├── 04-file-permissions
-  ├── 05-networking-basics
-  ├── 06-processes-and-services
-  ├── 07-package-management
-  ├── 08-log-analysis
-  ├── 09-ssh
-  └── 10-bash-scripting
+│
+├── labs
+├── linux_fundamentals.pdf
+└── README.md
 ```
 
 ---
