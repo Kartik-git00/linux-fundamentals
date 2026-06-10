@@ -16,51 +16,45 @@ Notes, labs, and hands-on exercises from my Linux Fundamentals learning journey 
 
 ## 📚 Topics Covered
 
-### Linux Basics
+### Lab 01 - Linux Navigation
 
-* [x] What is Linux?
-* [x] Why learn Linux?
-* [x] Linux Distributions
-* [x] File System Hierarchy
+Understanding the Linux file system and navigating directories using commands such as `pwd`, `ls`, and `cd`.
 
-### Navigation & Files
+### Lab 02 - File Management
 
-* [x] pwd
-* [x] ls
-* [x] cd
-* [ ] mkdir
-* [ ] touch
-* [ ] cp
-* [ ] mv
-* [ ] rm
+Creating, viewing, organizing, and deleting files and directories using common Linux file management commands.
 
-### Users & Permissions
+### Lab 03 - Users & Groups
 
-* [ ] Users and Groups
-* [ ] File Permissions
-* [ ] chmod
-* [ ] chown
-* [ ] sudo
+Managing users, groups, and access control while understanding how Linux handles user accounts.
 
-### System Administration
+### Lab 04 - File Permissions
 
-* [ ] Package Management
-* [ ] Services
-* [ ] Processes
-* [ ] System Monitoring
+Working with file ownership and permissions using tools like `chmod` and `chown` to secure resources.
 
-### Networking
+### Lab 05 - Networking Basics
 
-* [ ] IP Configuration
-* [ ] DNS
-* [ ] SSH
-* [ ] Network Troubleshooting
+Exploring IP addressing, DNS resolution, connectivity testing, and basic network troubleshooting.
 
-### Bash Scripting
+### Lab 06 - Processes & Services
 
-* [ ] Variables
-* [ ] Loops
-* [ ] Functions
+Monitoring running processes, managing system services, and understanding process lifecycle management.
+
+### Lab 07 - Package Management
+
+Installing, updating, and removing software packages using Linux package management tools.
+
+### Lab 08 - Log Analysis
+
+Investigating system and authentication logs to understand system activity and troubleshooting techniques.
+
+### Lab 9 - SSH
+
+Using Secure Shell (SSH) for remote administration, secure file transfers, and key-based authentication.
+
+### Lab 10 - Bash Scripting
+
+Learning automation through Bash scripts, variables, loops, functions, and conditional statements.
 
 ---
 
@@ -68,15 +62,18 @@ Notes, labs, and hands-on exercises from my Linux Fundamentals learning journey 
 
 ```text
 linux-fundamentals/
-│
-├── 1-Linux-Basics
-├── 2-Navigation-and-Files
-├── 3-Users-and- Permissions
-├── 4-System-Administration
-├── 5-Networking
-├── 6-Bash-Scripting
-├── 7-final-port-scanner-project
 ├── README.md
+└──Linux_Fundamentals.pdf
+  ├── 01-linux-navigation
+  ├── 02-file-management
+  ├── 03-users-and-groups
+  ├── 04-file-permissions
+  ├── 05-networking-basics
+  ├── 06-processes-and-services
+  ├── 07-package-management
+  ├── 08-log-analysis
+  ├── 09-ssh
+  └── 10-bash-scripting
 ```
 
 ---
