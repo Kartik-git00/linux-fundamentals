@@ -1,0 +1,46 @@
+1. <username>@<hostname><current working directory>$
+2. home directory = ~ (unprivileged)
+3. root = # (privileged)
+4. https://bash-prompt-generator.org/    (for bash prompt gen) & powerline
+5. man <tool> , <tool> -h or <tool> --help and apropos <tool>
+6. ssh username@ip-address
+7. uname -a (all info),
+8. uname -s (kernel name),
+9. uname -r (kernel release),
+10. uname -v (kernel version) etc
+
+output of uname -a =
+kernel-name+hostname+kernel-release+kernel-version+hardware-name+operating-system    
+11. https://www.exploit-db.com/  (for finding exploit)                
+12. env | grep MAIL (for finding mail path)       
+13. ifconfig (for network interface)       
+14. ls -la        
+15. current directory = .       
+16. parent directory = ..         
+17. inode or index number = ls -li            
+18. mkdir -p storage/local/user  (for making multiple parent directory)              
+19. tree .           
+20. touch abc.txt                                     
+21. mv abc.txt cba.txt storage/                
+22.  ls -lt (t is for sorting time wise)               
+23.  (/etc/ passwd) contains username,uid,gid, home directories               
+24. /etc/ shadow contains password hashes              
+25. Use vimtutor (to learn vim editor for future reference)        
+26. which <keyword>                      
+27. find / -type f -name *.conf -user root -size +20k -newermt 2020-03-03 -exec ls -al {} \; 2>/dev/null       
+here -type f defines file search                
+here -name *.conf defines config file to search            
+here -user root defines all files whose owner is root          
+here -size +20k defines that size of file should be larger than   20kb            
+here -newermt 2020-03-03 defines that only file show wbose date is newer than this date              
+here -exec ls -al {} \; defines Executes ls -la on each file or directory found by find, displaying detailed information for every result.  -exec do For every file found, run this command. {} is for placeholder (eg= ./notes.txt) \; use to end exec command                 
+here 2>/dev/null defines Redirects error messages (stderr) to /dev/null, hiding them from the terminal.          
+28. In Linux, every program has 3 standard streams:       
+0 = stdin : Input (keyboard)           
+1 = stdout : Normal output               
+2 = stderr : Error output                   
+extra &>/dev/null defines Hide both output and errors           
+29. locate <keyword>   (serachds in local database, to update database we use command sudo updatedb)           
+30. >> use to append and << is use to tell Keep reading input until you see <keyword>             
+eg. cat << EOP > steam.txt              
+31. wc -l (used to count newlines)
