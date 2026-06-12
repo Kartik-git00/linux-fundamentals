@@ -64,6 +64,7 @@ Learning automation through Bash scripts, variables, loops, functions, and condi
 linux-fundamentals/
 │
 ├── labs
+├──CheatSheet_Linux.md
 ├── linux_fundamentals.pdf
 └── README.md
 ```
