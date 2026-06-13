@@ -43,4 +43,60 @@ extra &>/dev/null defines Hide both output and errors
 29. locate <keyword>   (serachds in local database, to update database we use command sudo updatedb)           
 30. >> use to append and << is use to tell Keep reading input until you see <keyword>             
 eg. cat << EOP > steam.txt              
-31. wc -l (used to count newlines)
+31. wc -l (used to count newlines)            
+32. To get total package installed in sys, there are three method        
+apt list | grep "installed" | wc -l
+apt list --installed | grep -c "installed"               
+apt list --installed 2>/dev/null | wc -l             
+33. some command like more,less,head,tail,sort,grep,cut,tr,awk,column,sed,wc is useful for desired output while searching big log or big file             
+34. In grep \| is used for OR operation.               
+eg. cat /etc/ passwd | grep -v "false\|nologin"         
+eg. cat /etc/ passwd | grep -v "false\|nologin" | cut -d":" -f1     
+here cut is use for delimiter d as -d ":" and -f1 shows first field               
+eg. cat /etc/ passwd | grep -v "false\|nologin" | tr ":" " "        
+here tr works same as cut but here we can replace ":" with " "        
+eg. cat /etc/ passwd | grep -v "false\|nologin" | tr ":" " " | column -t          
+here column -t is use to make a table like form of our result 
+eg. cat /etc/ passwd | grep -v "false\|nologin" | tr ":" " " | awk '{print $1, $NF}'            
+here lets take an example like:       
+root    x     0     0     root    /root     /bin/bash                      
+ │        │     │    │      │       │              │                            
+ $1     $2   $3  $4    $5     $6            $7        
+so here  print use to display and $1 is first field and $NF used to display last field.  We can also use -F: for delimit directly wihout using any other tool for delimiter.      
+grep "cry0l1t3" /etc/ passwd | awk -F: '{print $1 "," $3}'                        
+eg. cat /etc/ passwd | grep -v "false\|nologin" | tr ":" " " | awk '{print $1, $NF}' | sed 's/bin/HTB/g'        
+here sed is an stream editor which is used to replace any text where                
+here s is Substitute             
+here bin is the word to search             
+here HTB is the word which replace bin              
+here g is used for all occurence to be replaced by HTB        
+eg. cat /etc/ passwd | grep -v "false\|nologin" | tr ":" " " | awk '{print $1, $NF}' | wc -l         
+here wc -l is used to count number of lines occured      
+35. username:password:UID:GID:comment:home:shell      
+This is the data we get from /etc/ passwd, we will not see password as its has to removed and redirected to /etc/ shadow.         
+36. for finding number of listening on ipv4       
+ss -l -4 | grep -v '127' |  grep -c "LISTEN"         
+37.     RegEx(Regular Expression)         
+Operators	Description          
+(a)	-The round brackets are used to group parts of a regex. Within the brackets, you can define further patterns which should be processed together.            
+[a-z]	-The square brackets are used to define character classes. Inside the brackets, you can specify a list of characters to search for.            
+{1,10}	-The curly brackets are used to define quantifiers. Inside the brackets, you can specify a number or a range that indicates how often a previous pattern should be repeated.               
+|	-Also called the OR operator and shows results when one of the two expressions matches                
+.*	-Operates similarly to an AND operator by displaying results only when both expressions are present and match in the specified order        
+To use RegEx in grep we have to do        
+grep -E         
+eg.   grep -E "(my|false)" /etc/ passwd          
+here we are saying to find line which contains have my or false            
+eg.     grep -E "(my.*false)" /etc/ passwd            
+here we are saying to find line which contains have my and false                
+eg. grep -v -E "#" /etc/ ssh/ sshd_config | grep -v "^$" 
+here we use ^$ to filter the blank line in-between         
+where ^ means start of line and $ means end of line            
+eg.  https://www.inlanefreight.com | grep -Eo "www.inlanefreight.com[^'\"]* | sort -u | wc 
+eg.  grep -E "Permit[a-zA-Z0-9]*"  /etc/ ssh/ sshd_config             
+here * is used to tell that occurance might be 0 to more        
+here [ ] have alphabets and numbers to be serach and which should be occured after Permit word           
+eg. grep -E '[A-Za-z]*Authentication' /etc/ ssh/ sshd_config 
+eg. grep -E '^Password.*yes' /etc/ ssh/ sshd_config
+eg. eg. grep -E 'yes$' /etc/ ssh/ sshd_config
+
