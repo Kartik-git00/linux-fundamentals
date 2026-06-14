@@ -100,3 +100,296 @@ eg. grep -E '[A-Za-z]*Authentication' /etc/ ssh/ sshd_config
 eg. grep -E '^Password.*yes' /etc/ ssh/ sshd_config
 eg. eg. grep -E 'yes$' /etc/ ssh/ sshd_config
 
+
+39. Service & Process Management           
+systemctl       
+Purpose: Manage services.                               
+Example:                                          
+systemctl status ssh                          
+What to remember:                   
+start   = Start service                          
+stop    = Stop service                    
+restart = Restart service                
+status  = Check service                   
+enable  = Start on boot                
+
+ps                                 
+Purpose: View running processes.                   
+Example:                  
+ps aux                      
+What to remember:                    
+USER                
+PID                 
+COMMAND                                 
+
+journalctl                                    
+Purpose: View logs.                
+Example:               
+journalctl -u ssh                 
+What to remember:                
+Check service errors             
+Check login attempts              
+Check logs             
+
+kill                           
+Purpose: Send signal to process.                    
+Example:                  
+kill PID          
+kill -l  (List all signals.)           
+Most Important Signals:               
+15 = SIGTERM (normal stop)                    
+9  = SIGKILL (force kill)      
+
+jobs                
+Purpose: Show background jobs.                 
+Example:                    
+jobs                 
+Remember:                
+Lists suspended/background tasks                
+
+bg                 
+Purpose: Continue process in background.             
+Example:                   
+bg                    
+Workflow:                
+Run command                 
+Ctrl+Z              
+bg             
+         
+fg                  
+Purpose: Bring process to foreground.                
+Example:              
+fg 1               
+Workflow:               
+Background job               
+↓                
+fg                 
+↓                  
+Interact again                     
+
+&                   
+Purpose: Start command in background immediately.              
+Example:             
+ping google.com &               
+Remember:              
+Run and get terminal back                 
+
+pgrep                  
+Purpose: Find PID by name.            
+Example:             
+pgrep sshd            
+Remember:              
+Process Name              
+↓             
+PID                
+
+pkill                  
+Purpose: Kill process by name.             
+Example:           
+pkill firefox            
+Remember:                 
+No PID needed         
+
+systemctl list-units --type=service              
+Purpose: List services.                
+Example:            
+systemctl list-units --type=service              
+Remember:               
+See all running services               
+
+&&                
+Meaning                  
+Only continue if previous command succeeded.                 
+Example:                
+Login success                 
+ ↓                  
+Run next command                  
+Memory                  
+&& = Success required         
+ echo '1' && ls MISSING_FILE && echo '3'                     
+
+;                                
+Meaning                  
+Run everything.                
+Even if previous command fails.                 
+Example:                
+Command1                              
+ ↓                
+fails                    
+ ↓                                    
+Command2 still runs                     
+Memory                                   
+; = I don't care about errors           
+echo '1'; ls MISSING_FILE; echo '3'                                 
+
+eg. systemctl -type service | grep 'Load AppArmor profiles managed internally by snapd'              
+
+40. Task Scheduling                            
+Systemd:               
+sudo mkdir /etc/systemd/system/mytimer.timer.d        
+sudo vim /etc/systemd/system/mytimer.timer     
+sudo vim /etc/systemd/system/mytimer.service              
+sudo systemctl daemon-reload                 
+sudo systemctl start mytimer.timer                
+sudo systemctl enable mytimer.timer                
+systemctl = manage services/timers               
+daemon-reload = reload service definitions                
+crontab -l = list scheduled jobs               
+crontab -e = edit scheduled jobs               
+* = every value               
+*/5 = every 5 units               
+Cron order:                                  
+Minute Hour Day Month Weekday                 
+Check:              
+ /etc/crontab                                                 
+ /etc/cron.*                                                
+
+41. php -s 127.0.0.1:8080         
+npx http-server -p 8080
+
+42.Backup and Restore                  
+
+rsync           
+Definition: Synchronize/copy files and directories                   efficiently.                   
+Example:                
+rsync -av source/ destination/    
+                                 
+rsync -a                             
+Definition: Archive mode (preserves permissions,                   timestamps, ownership).                        
+Example:                                      
+rsync -a source/ backup/      
+                         
+rsync -v                        
+Definition: Verbose mode (shows what is being copied).                 
+Example:                     
+rsync -av source/ backup/            
+            
+rsync -z                   
+Definition: Compress data during transfer.                             
+Example:                                    
+rsync -avz source/ user@server:/backup/       
+      
+rsync -e ssh          
+Definition: Transfer files through encrypted SSH.                   
+Example:                      
+rsync -avz -e ssh source/ user@server:/backup/        
+
+               
+rsync --delete                                   
+Definition: Delete files in destination that don't exist in               source.                 
+Example:                    
+rsync -av --delete source/ backup/    
+               
+ssh-keygen                   
+Definition: Generate SSH public/private key pair.                                       
+Example:               
+ssh-keygen -t rsa -b 2048       
+         
+ssh-copy-id                  
+Definition: Copy your public SSH key to a remote host.                   
+Example:                                  
+ssh-copy-id user@server          
+                            
+chmod +x                    
+Definition: Make a script executable.                                                       
+Example:                         
+chmod +x backup.sh             
+                   
+crontab -e                     
+Definition: Edit scheduled cron jobs.                
+Example:                   
+crontab -e     
+                                
+crontab -l                    
+Definition: List current cron jobs.                                          
+Example:                           
+crontab -l              
+                        
+Cron Entry                     
+Definition: Schedule automatic task execution.                     
+Example:                                
+0 * * * * /path/to/script.sh               
+Meaning:                 
+Run every hour at minute 0                
+
+eg. rsync -av to_backup/ synced_backup                       
+eg.   cronlab -e                              
+then put first command * * * * * first command                    
+* = 1-min 2-hour 3-day 4-month 5-week          
+then for checking do cronlab -l              
+
+42. File System Management             
+Inodes are data structures that store metadata about each file and directory, including permissions, ownership, size, and timestamps             
+
+In Linux, files can be stored in one of several key types:
+Regular files - regular file such as text file etc                 
+Directories - contains files                      
+Symbolic links  - which act as shortcuts or references to other files or directories.          
+eg. ls -li              
+
+The main tool for disk management on Linux is the fdisk, which allows us to create, delete, and manage partitions on a drive                                         
+eg. sudo fdisk -l              
+         
+Mounting involves linking a drive or partition to a directory, making its contents accessible within the overall file system hierarchy.                                         
+eg. udo mount /dev/sdb1 /mnt/usb                         
+cd /mnt/usb && ls -l                    
+for unmounting do sudo umount /mnt/usb       
+     
+lsof command to list the open files on the file system.             
+eg. lsof | grep cry0l1t3            
+If we find any processes that are using the file system, we need to stop them before we can unmount the file system.          
+View filesystems mounted at boot. Use cat /etc/fstab         
+                  
+Swap space is an essential part of memory management in Linux and plays a critical role in ensuring smooth system performance, especially when the available physical memory (RAM) is fully utilized.                              
+mkswap is used to prepare a device or file to be used as swap space by creating a Linux swap area        
+
+swapon activates the swap space, allowing the system to use it                     
+eg. sudo mkswap /dev/sdb2            
+eg. sudo swapon /dev/sdb2       
+
+ext2 is an older file system with no journaling capabilities, which makes it less suited for modern systems but still useful in certain low-overhead scenarios (like USB drives).                        
+
+ext3 and ext4 are more advanced, with journaling (which helps in recovering from crashes), and ext4 is the default choice for most modern Linux systems because it offers a balance of performance, reliability, and large file support.             
+
+Btrfs is known for advanced features like snapshotting and built-in data integrity checks, making it ideal for complex storage setups.                     
+
+XFS excels at handling large files and has high performance. It is best suited for environments with high I/O demands                          
+
+NTFS, originally developed for Windows, is useful for compatibility when dealing with dual-boot systems or external drives that need to work on both Linux and Windows systems.                              
+  
+43. Container                                                       
+Docker - Application container                                                            
+docker ps                            
+docker images                                 
+docker run <image>                               
+docker stop <container>                          
+docker start <container>                                            
+docker logs <container>                                                                    
+docker restart <container>                                 
+docker rm <container>                 
+
+LXC - linux system container      
+lxc-ls           
+lxc-start -n NAME     (start)                        
+lxc-attach -n NAME           (enter container shell)     
+lxc-stop -n NAME           
+  
+44. ip addr            
+ifconfig             
+ping               
+traceroute              
+ss              
+netstat                   
+lsof             
+DNS                                 
+Gateway             
+Loopback (127.0.0.1)            
+Discretionary access control (DAC)              
+Mandatory access control (MAC)                  
+Role-based access control (RBAC)              
+sudo vim /etc/network/interfaces     (edit interface conf)                  
+sudo systemctl restart networking               
+sudo vim /etc/resolv.conf       (edit dns)           
+sudo ifconfig eth0 netmask 255.255.255.0     (Assign a Netmask to an Interface)          
+sudo route add default gw 192.168.1.1 eth0      (Assign the Route to an Interface)             
+sudo ifconfig eth0 up (or)  sudo ip link set eth0 up    (Activate Network Interface)              
